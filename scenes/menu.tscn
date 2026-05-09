@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://cie78mok6eque"]
+
+[ext_resource type="Script" uid="uid://27mlywyg6mkw" path="res://scripts/menu.gd" id="1_yqeox"]
+[ext_resource type="PackedScene" uid="uid://cmnohp613wo8q" path="res://scenes/menu_player.tscn" id="2_vjb58"]
+[ext_resource type="Material" uid="uid://cso68m6ebw4jl" path="res://materials/ground.tres" id="3_4ytvr"]
+[ext_resource type="Script" uid="uid://df654wgw72uui" path="res://scripts/ui.gd" id="3_con2f"]
+[ext_resource type="PackedScene" uid="uid://rjem7pvctorq" path="res://scenes/vr_ui.tscn" id="4_mhnvy"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4h3mk"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_yqeox"]
+sky_material = SubResource("ProceduralSkyMaterial_4h3mk")
+
+[sub_resource type="Environment" id="Environment_vjb58"]
+background_mode = 2
+sky = SubResource("Sky_yqeox")
+tonemap_mode = 2
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_con2f"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhnvy"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_con2f")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4ytvr"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_mhnvy")
+
+[node name="menu" type="Node3D" unique_id=856391375]
+script = ExtResource("1_yqeox")
+
+[node name="XROrigin3D" parent="." unique_id=1695490142 instance=ExtResource("2_vjb58")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=409293136]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1081019035]
+environment = SubResource("Environment_vjb58")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1670369247]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+use_collision = true
+size = Vector3(100, 0.1, 100)
+material = ExtResource("3_4ytvr")
+
+[node name="ui" type="MeshInstance3D" parent="." unique_id=178687227]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2.1010323, -4)
+mesh = SubResource("PlaneMesh_4ytvr")
+script = ExtResource("3_con2f")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=235395768]
+size = Vector2i(1920, 1080)
+
+[node name="CanvasLayer" parent="SubViewport" unique_id=52671058 instance=ExtResource("4_mhnvy")]
+
+[editable path="XROrigin3D"]

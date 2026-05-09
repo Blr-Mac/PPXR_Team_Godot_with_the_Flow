@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://rjem7pvctorq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_imski"]
+font_size = 100
+font_color = Color(1, 0.61960787, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cacjt"]
+font_size = 100
+font_color = Color(0.37254903, 0.40392157, 0.7764706, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qdqad"]
+font_size = 50
+font_color = Color(1, 0.35686275, 0.35686275, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_v3v47"]
+font_size = 40
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=52671058]
+
+[node name="Control" type="Control" parent="." unique_id=1061849042]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=892487767]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.31130823, 0.17604998, 0.18031341, 1)
+
+[node name="Label" type="Label" parent="Control" unique_id=1556721544]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 731.0
+offset_right = 1438.0
+offset_bottom = 868.0
+text = "Press A for VR native Scene"
+label_settings = SubResource("LabelSettings_imski")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Control" unique_id=497277117]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 832.0
+offset_right = 1865.0
+offset_bottom = 969.0
+text = "Press B for Controller Navtive Scene"
+label_settings = SubResource("LabelSettings_cacjt")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Control" unique_id=289887808]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 10.0
+offset_right = 1672.0
+offset_bottom = 151.0
+text = "Guide
+To return home press menu button on left controller"
+label_settings = SubResource("LabelSettings_qdqad")
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Control" unique_id=426859989]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 165.0
+offset_right = 1556.0
+offset_bottom = 394.0
+text = "VR Native Scene: 
+    Walk (left joystick) to Ball and pick up using controller grip
+    Rotate the puzzle to move the ball inside
+    Get the small ball inside the puzzle into the ring to get to the next level"
+label_settings = SubResource("LabelSettings_v3v47")
+
+[node name="Label5" type="Label" parent="Control" unique_id=376355696]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 409.0
+offset_right = 1551.0
+offset_bottom = 696.0
+text = "Controller Native Scene: 
+    Look at monitor showing puzzle
+    Rotate the puzzle with left joystick and x/y
+    Rotate the camera with right joystick 
+    Get the small ball inside the puzzle into the ring to get to the next level"
+label_settings = SubResource("LabelSettings_v3v47")

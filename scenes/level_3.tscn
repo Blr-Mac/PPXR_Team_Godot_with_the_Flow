@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://cb7k1fj8vbss0"]
+
+[ext_resource type="Script" uid="uid://dye4x1by36yh3" path="res://scripts/level_3.gd" id="1_uwxec"]
+[ext_resource type="Material" uid="uid://b6sdpniv8vqni" path="res://materials/blue_translu.tres" id="2_1pn4d"]
+[ext_resource type="Script" uid="uid://chrmop33vukir" path="res://scenes/rigid_body_3d.gd" id="3_ah8om"]
+[ext_resource type="Material" uid="uid://63go7cq78eru" path="res://materials/ring_green.tres" id="4_1pn4d"]
+[ext_resource type="Material" uid="uid://b5clos7rm241d" path="res://materials/ball_brown.tres" id="4_ah8om"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_wwpf4"]
+left_to_right = 0.0
+size = Vector3(0.05, 0.05, 0.05)
+
+[sub_resource type="SphereMesh" id="SphereMesh_g2h75"]
+material = ExtResource("4_ah8om")
+radius = 0.025
+height = 0.05
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wwpf4"]
+radius = 0.025
+
+[sub_resource type="TorusMesh" id="TorusMesh_dwgg1"]
+material = ExtResource("4_1pn4d")
+inner_radius = 0.01
+outer_radius = 0.02
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ru4tf"]
+height = 0.03
+radius = 0.02
+
+[node name="Level3" type="Node3D" unique_id=1742550813]
+script = ExtResource("1_uwxec")
+
+[node name="level" type="CSGCombiner3D" parent="." unique_id=896102106]
+use_collision = true
+collision_layer = 128
+collision_mask = 128
+
+[node name="track6" type="CSGBox3D" parent="level" unique_id=2105920043]
+transform = Transform3D(1, -4.3711392e-08, 2.9802322e-08, -2.9802326e-08, 0, 1.0000001, -4.371139e-08, -1.0000001, -1.3027009e-15, -0.009224944, 0.22316372, 0.18025878)
+use_collision = true
+size = Vector3(0.15, 0.05, 0.5)
+
+[node name="strack6" type="CSGBox3D" parent="level" unique_id=1245119836]
+transform = Transform3D(1, -4.3711392e-08, 2.9802322e-08, -2.9802326e-08, 0, 1.0000001, -4.371139e-08, -1.0000001, -1.3027009e-15, -0.009224944, 0.22300327, 0.1552588)
+operation = 2
+use_collision = true
+size = Vector3(0.05, 0.05, 0.45132324)
+
+[node name="track4" type="CSGBox3D" parent="level" unique_id=813729507]
+transform = Transform3D(2.9802322e-08, 0, -1, 8.742278e-08, -1, 2.6054018e-15, -1, -8.742278e-08, -2.9802322e-08, -0.17966627, 0.44823426, -0.32343447)
+use_collision = true
+size = Vector3(0.15, 0.05, 0.48999023)
+
+[node name="strack4" type="CSGBox3D" parent="level" unique_id=2044380572]
+transform = Transform3D(2.9802322e-08, 0, -1, 8.742278e-08, -1, 2.6054018e-15, -1, -8.742278e-08, -2.9802322e-08, -0.21129297, 0.42323425, -0.32343447)
+operation = 2
+use_collision = true
+size = Vector3(0.05, 0.05, 0.45531738)
+
+[node name="track5" type="CSGBox3D" parent="level" unique_id=1161196701]
+transform = Transform3D(1, 8.742278e-08, 7.351371e-08, 8.742278e-08, -1, 2.6054018e-15, 7.351371e-08, 3.821371e-15, -1, -0.009121085, 0.44823426, -0.02797988)
+use_collision = true
+size = Vector3(0.15, 0.05, 0.4609375)
+
+[node name="strack5" type="CSGBox3D" parent="level" unique_id=1940894451]
+transform = Transform3D(1, 8.742278e-08, 7.351371e-08, 8.742278e-08, -1, 2.6054018e-15, 7.351371e-08, 3.821371e-15, -1, -0.009121085, 0.42323425, -0.06357509)
+operation = 2
+use_collision = true
+size = Vector3(0.05, 0.05, 0.49230713)
+
+[node name="track3" type="CSGBox3D" parent="level" unique_id=1058510131]
+transform = Transform3D(0, 1.0000001, 0, -2.9802326e-08, 0, 1.0000001, 1, 0, 2.9802322e-08, -0.43916857, 0.22278182, -0.32343447)
+use_collision = true
+size = Vector3(0.15, 0.05, 0.5)
+
+[node name="strack3" type="CSGBox3D" parent="level" unique_id=900802454]
+transform = Transform3D(0, 1.0000001, 0, -2.9802326e-08, 0, 1.0000001, 1, 0, 2.9802322e-08, -0.4141686, 0.2226214, -0.32343447)
+operation = 2
+use_collision = true
+size = Vector3(0.05, 0.05, 0.45132324)
+
+[node name="track2" type="CSGBox3D" parent="level" unique_id=1225166622]
+transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, -0.17466138, 0, -0.32343447)
+use_collision = true
+size = Vector3(0.15, 0.05, 0.5)
+
+[node name="strack2" type="CSGBox3D" parent="level" unique_id=276109024]
+transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, -0.21129297, 0.025, -0.32343447)
+operation = 2
+use_collision = true
+size = Vector3(0.05, 0.05, 0.45531738)
+
+[node name="track1" type="CSGBox3D" parent="level" unique_id=22602824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6485381)
+use_collision = true
+size = Vector3(0.15, 0.05, 0.5)
+
+[node name="strack1" type="CSGBox3D" parent="level" unique_id=506144164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025, -0.5990794)
+operation = 2
+use_collision = true
+size = Vector3(0.05, 0.05, 0.59765136)
+
+[node name="rtrack1" type="CSGMesh3D" parent="level" unique_id=349790885]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 0, -0.87311316)
+mesh = SubResource("PrismMesh_wwpf4")
+
+[node name="border" type="CSGCombiner3D" parent="." unique_id=416063198]
+use_collision = true
+collision_layer = 128
+collision_mask = 128
+
+[node name="outside" type="CSGSphere3D" parent="border" unique_id=1393611676]
+radius = 1.0
+radial_segments = 20
+rings = 20
+material = ExtResource("2_1pn4d")
+
+[node name="outside2" type="CSGSphere3D" parent="border" unique_id=1858879160]
+operation = 2
+radius = 0.9
+radial_segments = 20
+rings = 20
+material = ExtResource("2_1pn4d")
+
+[node name="strack2" type="CSGBox3D" parent="border" unique_id=160200866]
+transform = Transform3D(1, 0, 0, 0, 0.05716325, 0.99836487, 0, -0.99836487, 0.05716325, 0, 0.15463586, -0.88006264)
+operation = 2
+use_collision = true
+size = Vector3(0.05, 0.026660156, 0.25896728)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1435742656]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07006167, -0.7364966)
+collision_layer = 128
+collision_mask = 128
+continuous_cd = true
+script = ExtResource("3_ah8om")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=291787801]
+mesh = SubResource("SphereMesh_g2h75")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=264526790]
+shape = SubResource("SphereShape3D_wwpf4")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=910145695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009988204, 0.021204561, 0.15568502)
+collision_layer = 128
+collision_mask = 128
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=1853390265]
+mesh = SubResource("TorusMesh_dwgg1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1474136304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.006264709, 0)
+shape = SubResource("CylinderShape3D_ru4tf")
+
+[connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]

@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dfqr6lii0rfoe"]
+
+[ext_resource type="Script" uid="uid://bqnjqrjtc8oj4" path="res://scripts/main.gd" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://4b7loh14horl" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://bux7skgpl5r7" path="res://scenes/level1.tscn" id="2_tbgi4"]
+[ext_resource type="Material" uid="uid://cso68m6ebw4jl" path="res://materials/ground.tres" id="3_tefeu"]
+[ext_resource type="PackedScene" uid="uid://cwj31fe8rktjp" path="res://scenes/globe.tscn" id="4_jyhfs"]
+[ext_resource type="AudioStream" uid="uid://bdfnhqd0i1j2p" path="res://sounds/Chimes_d.wav" id="5_tbgi4"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_tbgi4"]
+sky_material = SubResource("ProceduralSkyMaterial_o5qli")
+
+[sub_resource type="Environment" id="Environment_sugp2"]
+background_mode = 2
+sky = SubResource("Sky_tbgi4")
+tonemap_mode = 2
+
+[node name="Main" type="Node3D" unique_id=1076559015]
+script = ExtResource("1_0wfyh")
+
+[node name="Level1" parent="." unique_id=1742550813 instance=ExtResource("2_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0547786, 1.05306, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=211234381]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1894480707]
+environment = SubResource("Environment_sugp2")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1169640351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+use_collision = true
+size = Vector3(100, 0.1, 100)
+material = ExtResource("3_tefeu")
+
+[node name="XROrigin3D" parent="." unique_id=781246184 instance=ExtResource("1_o5qli")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="globe" parent="." unique_id=546112237 instance=ExtResource("4_jyhfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0547786, 1.05306, 0)
+mass = 1.0
+
+[node name="RemoteTransform3D" parent="globe" index="1" unique_id=850701866]
+remote_path = NodePath("../../Level1")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1961709791]
+stream = ExtResource("5_tbgi4")
+
+[editable path="globe"]
